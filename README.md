@@ -1,15 +1,10 @@
-# Agendador de Descarga — PWA sem login
+# Agendador PWA — sem login
 
-Esta versão abre diretamente, sem tela de login.
+1. Execute `supabase-politicas.sql` no SQL Editor do Supabase.
+2. Publique todos estes arquivos na mesma pasta do GitHub/Vercel.
+3. Abra o mesmo endereço nos aparelhos.
+4. Se já instalou uma versão anterior, atualize a página ou reinstale o PWA para carregar a versão 2026-10-06-sync2.
 
-## Sincronização
-Os agendamentos, fornecedores e motoristas são compartilhados pela tabela `agendador_dados` no Supabase, na linha `id = 1`.
+A sincronização usa a tabela `public.agendador_dados`, linha `id=1`, sem login. O aplicativo consulta a nuvem periodicamente e grava as alterações.
 
-## Supabase
-Execute `supabase-politicas.sql` no SQL Editor do projeto. Sem essas políticas, o navegador pode ser bloqueado pelo RLS.
-
-## Publicação
-Envie `index.html`, `manifest.webmanifest`, `sw.js` e a pasta `icons` para o GitHub/Vercel.
-
-## Observação
-Sem login, qualquer pessoa que tenha acesso ao endereço do aplicativo e às políticas públicas poderá ler/alterar a linha compartilhada. Para um sistema de portaria público, isso é uma decisão de segurança importante.
+Aviso: sem login, qualquer pessoa que tenha o endereço poderá ler/alterar os dados permitidos por essas políticas.
